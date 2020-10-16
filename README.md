@@ -125,6 +125,3 @@ What won't happen:
 - [ActiveRecord Validations](https://guides.rubyonrails.org/active_record_validations.html)
 - [ActiveRecord Query Interface](https://guides.rubyonrails.org/active_record_querying.html)
 
-
-<p class='util--hide'>View <a href='https://learn.co/lessons/rails-assessment'>Rails Portfolio Project</a> on Learn.co and start learning to code for free.</p>
-
