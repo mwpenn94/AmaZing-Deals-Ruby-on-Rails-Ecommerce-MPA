@@ -1,0 +1,22 @@
+<h1>Have an answer?<h1>
+
+<%= form_for(@answer) do |f| %>
+    <% if f.object.errors.any? %>
+    <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <% end %>
+    <%= user_id_field(f.object) %>
+    <%= question_id_field(f.object) %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <br>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.submit "Submit" %>
+
+<% end %>

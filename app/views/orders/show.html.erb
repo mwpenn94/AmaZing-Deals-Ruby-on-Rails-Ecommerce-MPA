@@ -1,0 +1,34 @@
+<h2>Order Details</h2>
+
+<p>Order Date: <% time = @order.created_at.localtime %>
+<%= time.strftime("%B %d, %Y at %I:%M %p") %></p>
+<p>Order #: <%= @order.id %></p>
+<p>Order total: </p>
+<%= link_to "Cancel Order", order_path(@order), method: :delete, data: {confirm: "Are you sure?"} %>
+
+<h3> Shipment Details  </h3>
+<p>Delivery Estimate:
+<% est_delivery = time + 7.days %>
+<%= est_delivery.strftime("%B %d, %Y") %></p>
+
+<h3> Payment Information </h3>
+<h4> Payment Method</h4>
+<p> Card ending in <%= @order.card_number[-4..-1] %>
+<h3> Billing Address </h3>
+<%= @order.bill_firstname %> <%= @order.bill_lastname %><br>
+<%= @order.bill_address1 %>, <%= @order.bill_address2 %><br>
+<%= @order.bill_city %>, <%= @order.bill_state %> <%= @order.bill_zipcode %> 
+
+<h3> Shipping Address </h3>
+<%= @order.ship_firstname %> <%= @order.ship_lastname %> <br>
+<%= @order.ship_address1 %>, <%= @order.ship_address2 %> <br>
+<%= @order.ship_city %>, <%= @order.ship_state %> <%= @order.ship_zipcode %> <br>
+<%= @order.phone %> 
+
+<h3> Order Summary </h3>
+<ul>
+    <% @order.lineitems.each do |item| %>
+    <li><%= item.quantity %> x <%= item.product.name %> = <%= number_to_currency(item.total_price) %></li>
+    <% end %>
+</ul>
+<p>Total: <%= number_to_currency(@order.total) %>

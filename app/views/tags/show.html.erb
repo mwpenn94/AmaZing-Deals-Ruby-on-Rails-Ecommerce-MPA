@@ -1,0 +1,18 @@
+<h1><%= @tag.name %></h1>
+<% if current_user.support? %>
+    <p><strong><%= link_to "Edit tag", edit_tag_path(@tag) %></strong></p>
+<% end %>
+  <div>
+<% @tag.categories.each do |category| %>
+    <div>
+      <p><%= link_to category.name, category_path(category) %></p>
+    </div>
+<% end %>
+<br>
+<br>
+<% tag.products.each do |product| %>
+        <div>
+            <p><%= link_to product.name, product_path(product) %></p>
+            <p><%= product.price %></p>
+        </div>
+<% end %>

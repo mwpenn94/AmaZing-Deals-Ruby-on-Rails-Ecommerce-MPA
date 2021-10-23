@@ -1,0 +1,8 @@
+<h2>Review<h2>
+
+<p><%= @review.customer.username %></p>
+<p><%= @review.rating %> stars <%= @review.title %></p>
+<p>Reviewed on <%= @review.updated_at ||= @review.created_at %></p>
+<br>
+<br>
+<p><%= @review.description %></p>

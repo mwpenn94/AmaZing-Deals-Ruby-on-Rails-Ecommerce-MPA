@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
+
+<div class="center">
+
+  <div class="info">
+    <% if @user.support == true %>
+      <p><strong>AmaZing SUPPORT</strong></p>
+    <% end %>
+    <% if @user.seller == true %>
+      <p><strong>AmaZing SELLER</strong></p>
+    <% end %>
+    <p><strong>Your Account</strong></p>
+    <p><strong><%= link_to 'Your Products', user_products_path(@user)%></strong></p>
+    <p><strong><%= link_to 'Your Orders', user_orders_path(@user)%></strong></p>
+    <p><strong><%= link_to 'Your Questions', user_questions_path(@user)%></strong></p> 
+    <p><strong><%= link_to 'Your Answers', user_answers_path(@user)%></strong></p> 
+    <p><strong><%= link_to 'Your Reviews', user_reviews_path(@user)%></strong></p>    
+    <p><strong><%= link_to 'Login and Security', edit_user_path(@user)%></strong></p>
+  </div>
+</div> 

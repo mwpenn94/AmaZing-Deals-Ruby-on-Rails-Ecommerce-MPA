@@ -1,0 +1,9 @@
+<h2>Question & answers<h2>
+
+<p>Question: <%= @question.description %></p>
+<% @question.answers.each do |answer| %>
+<div>
+  <p>Answer:<%= answer.description %>
+  <p>By <%= answer.user.username %> on <%= answer.updated_at ||= answer.created_at %>
+</div>
+<% end %>

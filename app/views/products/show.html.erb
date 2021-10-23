@@ -1,0 +1,35 @@
+<h2><%= @product.name %></h2><p><%= number_to_currency(@product.price) %></p>
+<p>Rating: <%= @product.average_review_rating %> - <%= @product.reviews.count %> reviews </p>
+<p><%= @product.description %></p>
+<p><%= button_to "Add to cart", lineitems_path(:product_id => @product.id) %></p>
+
+<% if current_user == @product.seller %>
+    <p><strong><%= link_to "Edit your listing", edit_product_path(@product) %></strong></p>
+<% end %>
+
+<h3>Customer questions & answers</h3>
+<%= link_to "Have a question? Search for answers", new_product_question_path(@product, @question) %>
+<% @product.questions.each do |question| %>
+  <div>
+    <p>Question: <%= link_to question.description, question_path(question) %></p>
+    <%= link_to "Submit an answer", new_question_answer_path(question, @answer) %>
+    <% question.answers.each do |answer| %>
+      <div>
+        <p>Answer:<%= answer.description %></p>
+        <p>By <%= answer.user.username %> <%= "SELLER" if answer.user == @product.seller %> on <%= answer.updated_at ||= answer.created_at %>
+      </div> 
+  </div>
+  <% end %>
+<% end %>
+
+<h3>Customer reviews</h3>
+<%= link_to "Write a customer review", new_product_review_path(current_user, @review) %>
+<% @product.reviews.each do |review| %>
+  <div>
+    <p><%= review.customer.username %></p>
+    <p><%= review.rating %> stars <%= link_to review.title, review_path(review) %></p>
+    <p>Reviewed on <%= review.updated_at ||= review.created_at %></p>
+  </div>
+<% end %>
+
+<p><small>Tags: <%= raw @product.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>

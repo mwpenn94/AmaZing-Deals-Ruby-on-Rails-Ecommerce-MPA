@@ -1,0 +1,10 @@
+<h1> Tags </h1>
+<% if current_user.support? %>
+    <p><strong><%= link_to "New tag", new_tag_path(@tag) %></strong></p>
+<% end %>
+  <div>
+<% @tags.each do |tag| %>
+    <div>
+        <h2><%= link_to tag.name, tag_path(tag) %></h2>
+    </div>
+<% end %>
