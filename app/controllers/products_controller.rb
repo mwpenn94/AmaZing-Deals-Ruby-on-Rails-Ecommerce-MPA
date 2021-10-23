@@ -78,10 +78,6 @@ class ProductsController < ApplicationController
     
     private
 
-    def product_search
-
-    end
-
     def product_params
         params.require(:product).permit(:name, :price, :description, :seller_id, :created_at, :updated_at, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end

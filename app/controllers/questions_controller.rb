@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
         if params[:customer_id] && !User.exists?(params[:customer_id])
             redirect_to users_path, alert: "Customer not found."
         else
-            @question = Question.new(customer_id: params[:customer_id])
+            @question = Question.new(customer_id: params[:customer_id], product_id: params[:product_id])
         end
     end
 

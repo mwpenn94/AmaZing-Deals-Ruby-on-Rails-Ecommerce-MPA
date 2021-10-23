@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
         if params[:user_id] && !User.exists?(params[:user_id])
             redirect_to users_path, alert: "user not found."
         else
-            @answer = Answer.new(user_id: params[:user_id])
+            @answer = Answer.new(user_id: params[:user_id], question_id: params[:question_id])
         end
     end
 

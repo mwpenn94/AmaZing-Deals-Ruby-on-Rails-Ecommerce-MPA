@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
     def index
         if params[:user_id]
             @user = User.find(params[:user_id])
-            @orders = User.find(params[:user_id]).orders
+            @orders = Order.where(customer_id: current_user)
         else
             @orders = Order.all
         end
@@ -13,7 +13,7 @@ class OrdersController < ApplicationController
     end
 
     def new
-        @order = Order.new
+        @order = Order.new(customer_id: current_user.id)
     end
 
     def create
@@ -25,6 +25,7 @@ class OrdersController < ApplicationController
 
         @order.email = current_user.email
         @order.total = @order.sub_total
+        @order.customer_id = current_user.id
         active_merchant_biller
         @order.save
         Cart.destroy(session[:cart_id])

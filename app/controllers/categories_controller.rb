@@ -37,9 +37,15 @@ class CategoriesController < ApplicationController
         redirect_to category_path(@category)
     end
 
+    def destroy
+        @category = Category.find(params[:id])
+        @category.destroy
+        redirect_to categories_path
+    end
+
     private
 
     def category_params
-        params.require(:category).permit(:name, :created_at, :updated_at, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
+        params.require(:category).permit(:name, :department_id, :created_at, :updated_at, :tag_list, :tag, { tag_ids: [] }, :tag_ids)
     end
 end
