@@ -1,6 +1,6 @@
 <h1> AmaZing Deals </h1>
 
-<%= link_to "Offer your own AmaZing Deals Here", new_product_path(@product) %>
+<%= link_to "Offer your own AmaZing Deals Here", new_user_product_path(current_user, @product) %>
 
 <% @products.each do |product| %>
     <div>

@@ -23,7 +23,7 @@
 <% end %>
 
 <h3>Customer reviews</h3>
-<%= link_to "Write a customer review", new_product_review_path(current_user, @review) %>
+<%= link_to "Write a customer review", new_product_review_path(@product, @review) %>
 <% @product.reviews.each do |review| %>
   <div>
     <p><%= review.customer.username %></p>

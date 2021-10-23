@@ -3,7 +3,7 @@ class Order < ApplicationRecord
     has_many :products, through: :lineitems
     belongs_to :customer, :class_name => 'User', optional: true
 
-    scope :greater_or_equal_to_100_total, -> { where("total >= 100") }
+#    scope :greater_or_equal_to_100_total, -> { where("total >= 100") }
 #    after_create :email_user
 
 #    def email_user

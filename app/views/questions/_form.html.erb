@@ -8,8 +8,8 @@
         <% end %>
     </ul>
     <% end %>
-    <%= question_customer_id_field(f.object) %>
-    <%= question_product_id_field(f.object) %>
+    <%= question_customer_id_field(@question) %>
+    <%= question_product_id_field(@question) %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <br>

@@ -3,6 +3,7 @@
 <p>Order Date: <% time = @order.created_at.localtime %>
 <%= time.strftime("%B %d, %Y at %I:%M %p") %></p>
 <p>Order #: <%= @order.id %></p>
+Ordered by <%= @order.customer_id %>
 <p>Order total: </p>
 <%= link_to "Cancel Order", order_path(@order), method: :delete, data: {confirm: "Are you sure?"} %>
 
