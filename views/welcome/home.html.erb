@@ -1,0 +1,7 @@
+<% if name = session[:name] %>
+  <p>Welcome <%= name -%>!</p>
+
+<% else %>
+  <p>Welcome! Sign up or login to view todays AmaZing Deals!</p>
+  <p><%= link_to 'Sign in with the GitHub', '/auth/github', method: :post %></p>
+<% end %>

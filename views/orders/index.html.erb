@@ -1,0 +1,17 @@
+<h2>All Orders</h2>
+
+<% @orders.each do |order| %>
+    <p><%= link_to "Ordered #{order.created_at || order.updated_at}", order_path(order) %></p>
+    <p><%= order.ship_firstname %> <%= order.ship_lastname %></p>
+    <p><%= order.ship_address1 %> <%= order.ship_address2 %></p>
+    <p><%= order.ship_city %>, <%= order.ship_state %> <%= order.ship_zipcode %></p>
+    <p><%= order.phone %></p> 
+  <p>Line Items:</p>
+  <ul>
+    <% order.lineitems.each do |item| %>
+    <li><%= item.quantity %> x <%= item.product.name %></li>
+    <% end %>
+  </ul>
+  <br>
+  <br>
+<% end %>

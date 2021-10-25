@@ -1,0 +1,20 @@
+<h2><%= @category.name %></h2>
+<% if current_user.support? %>
+    <p><strong><%= link_to "Edit category", edit_category_path(@category) %></strong></p>
+    <p><strong><%= link_to "Delete category", category_path(@category), method: :delete, data: {confirm: "Are you sure?"} %></strong></p>
+<% end %>
+<br>
+<br>
+
+<% @category.tags.each do |tag| %>
+    <div>
+        <% tag.products.each do |product| %>
+        <div>
+            <h3><%= link_to product.name, product_path(product) %></h3>
+            <p>Rating: <%= product.average_review_rating %> - <%= product.reviews.count %> reviews </p>
+            <p><%= number_to_currency(product.price) %></p>
+            <p><%= button_to "Add to cart", lineitems_path(:product_id => product.id) %></p>
+        </div>
+        <% end %>
+    </div>    
+<% end %>

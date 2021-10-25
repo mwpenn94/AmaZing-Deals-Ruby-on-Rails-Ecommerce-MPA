@@ -1,0 +1,27 @@
+<h1>Sign Up to See Todays AmaZing Deals!<h1>
+
+<%= form_for(@user) do |f| %>
+    <% if f.object.errors.any? %>
+    <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+    <% end %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <br>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+
+    <%= f.label :support, "Check box if you are support staff" %>
+    <%= f.check_box :support, class: "form-check-input" %>
+
+    <%= f.submit "Submit" %>
+
+<% end %>

@@ -1,0 +1,28 @@
+<div class = 'col-md-8 offset-2'>
+    <h1 class = "text-center">Offer Your Own AmaZing Deals!</h1>
+
+    <%= simple_form_for(@product) do |f| %>
+        <% if f.object.errors.any? %>
+        <ul>
+            <% f.object.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+        </ul>
+        <% end %>
+        <%= seller_id_field(f.object) %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <br>
+        <br>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+        <br>
+        <br>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+        <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
+
+        <%= f.submit "Submit" %>
+
+    <% end %>
+</div>

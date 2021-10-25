@@ -1,0 +1,15 @@
+<h2>Answers<h2>
+<% @questions.each do |question| %>
+  <div>
+      <% question.answers.each do |answer| %>
+      <div>
+        <% if answer.user == current_user %>
+            <h2><%= link_to question.name, question_path(question) %></h2>
+            <h2><%= link_to answer.name, answer_path(answer) %></h2>
+        <% else %>
+            <p><"None yet! Share your knowledge by answering a question."</p>
+        <% end %>
+      </div>
+  </div>
+  <% end %>
+<% end %>

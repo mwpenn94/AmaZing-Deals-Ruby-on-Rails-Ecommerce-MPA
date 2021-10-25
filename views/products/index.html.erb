@@ -1,0 +1,12 @@
+<h1> AmaZing Deals </h1>
+
+<%= link_to "Offer your own AmaZing Deals Here", new_user_product_path(current_user, @product) %>
+
+<% @products.each do |product| %>
+    <div>
+        <h3><%= link_to product.name, product_path(product) %></h3>
+        <p>Rating: <%= product.average_review_rating %> - <%= product.reviews.count %> reviews </p>
+        <p><%= number_to_currency(product.price) %></p>
+        <p><%= button_to "Add to cart", lineitems_path(:product_id => product.id) %></p>
+    </div>
+<% end %>

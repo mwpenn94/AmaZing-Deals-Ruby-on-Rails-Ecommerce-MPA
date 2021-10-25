@@ -1,0 +1,10 @@
+<h1> AmaZing Deals </h1>
+<% if current_user.support? %>
+    <p><strong><%= link_to "New department", new_department_path(@department) %></strong></p>
+<% end %>
+  <div>
+<% @departments.each do |department| %>
+    <div>
+        <h2><%= link_to department.name, department_path(department) %></h2>
+    </div>
+<% end %>

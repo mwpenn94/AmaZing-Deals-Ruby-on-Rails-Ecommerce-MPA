@@ -1,0 +1,14 @@
+<h2><%= @department.name %></h2>
+<% if current_user.support? %>
+    <p><strong><%= link_to "Edit department", edit_department_path(@department) %></strong></p>
+    <p><strong><%= link_to "Delete department", department_path(@department), method: :delete, data: {confirm: "Are you sure?"} %></strong></p>
+    <p><strong><%= link_to "New category", new_department_category_path(@department, @category) %></strong></p>
+<% end %>
+<br>
+<br>
+<h3>Categories</h3>
+<% @department.categories.each do |category| %>
+    <div>
+      <p><%= link_to category.name, category_path(category) %></p>
+    </div>
+<% end %>

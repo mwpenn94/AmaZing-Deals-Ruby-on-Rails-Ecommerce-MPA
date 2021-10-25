@@ -1,0 +1,7 @@
+<% if current_user.support? %>
+
+<% @users.each do |user| %>
+  <div>
+    <h2><%= link_to user.username, user_path(user) %></h2>
+  </div>
+<% end %>
