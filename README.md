@@ -1,4 +1,4 @@
-# Ecommerce CMS Made in Sinatra (Swanky Art Shop) 
+# Ecommerce CMS Made in Rails (AmaZing Deals)
 
 ## Description
 
