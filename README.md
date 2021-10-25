@@ -6,7 +6,7 @@ This is a Simple Ecommerce Application. Depending on their permissions, it allow
 
 Similar to large scale counterparts, it is designed for straightforward use with minimal explanation required for the user.
 
-Omniauth Github authentication has been included for ease of access. See spec.md in the roort directory for a list of additional features.
+Omniauth Github authentication has been included for ease of access. See spec.md in the root directory for a list of additional features.
 
 [Watch this video to understand how this app works!](https://drive.google.com/file/d/1JOP9_D0axoQ6ORh8GYn36hCvrs8_ABbD/view?usp=sharing)
 
