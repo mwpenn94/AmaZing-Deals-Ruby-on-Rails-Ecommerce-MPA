@@ -1,5 +1,7 @@
 # Ecommerce CMS Made in Rails (AmaZing Deals)
 
+[Check out the demo here🎬](https://drive.google.com/file/d/1JOP9_D0axoQ6ORh8GYn36hCvrs8_ABbD/view?usp=sharing)
+
 ## Description
 
 This is a Simple Ecommerce Application. Depending on their permissions, it allows users CRUD functionality across multiple objects involved in a large scale ecommerce marketplace applicaton -departments, categories, products, questions, answers, reviews, tags, carts, lineitems, orders, etc.
@@ -7,10 +9,6 @@ This is a Simple Ecommerce Application. Depending on their permissions, it allow
 Similar to large scale counterparts, it is designed for straightforward use with minimal explanation required for the user.
 
 Omniauth Github authentication has been included for ease of access. See spec.md in the root directory for a list of additional features.
-
-[Watch this video to understand how this app works!](https://drive.google.com/file/d/1JOP9_D0axoQ6ORh8GYn36hCvrs8_ABbD/view?usp=sharing)
-
-[Blog post about this app](https://dev.to/mwpenn94/rails-ecommerce-app-1of)
 
 ## Built With
 
