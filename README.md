@@ -1,6 +1,6 @@
 # Ecommerce CMS Made in Rails (AmaZing Deals)
 
-[Check out the demo here🎬](https://drive.google.com/file/d/1JOP9_D0axoQ6ORh8GYn36hCvrs8_ABbD/view?usp=sharing)
+[Check out the demo here🎬](https://drive.google.com/file/d/13nBL7yJr5DnPwbk95Mx6sz8_ZFNc3DAW/view?usp=sharing)
 
 ## Description
 
